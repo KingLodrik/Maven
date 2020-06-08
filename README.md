@@ -28,9 +28,18 @@ maven installation with apache enverment
   1) cd /tmp/
   2) sudo wget https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
   3) sudo cp -r file to /opt/
+              or
+     sudo tar xf /tmp/apache-maven-*.tar.gz -C /opt         
   4) sudo tar xf /tmp/apache-maven-3.6.3.tar.gz 
-  5) sudo mv apache-maven-3.6.3/ apache-maven/
-  6) 
+  5) sudo mv apache-maven-3.6.3/ apache-maven
+  6) sudo nano /etc/profile.d/maven.sh
+            export JAVA_HOME=/usr/lib/jvm/default-java
+            export M2_HOME=/opt/maven
+            export MAVEN_HOME=/opt/maven
+            export PATH=${M2_HOME}/bin:${PATH}
+  7) sudo chmod +x /etc/profile.d/maven.sh
+  8) source /etc/profile.d/maven.sh
+  9) mvn -version
 
    
                              
